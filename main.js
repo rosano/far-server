@@ -31,13 +31,13 @@ app.use(async (req, res) => {
 	}
 
 	return await res.json(await (await fetch(url, {
-    method: req.method,
-    headers: {
-    	'Accept': 'application/json',
-    	'Content-Type': 'application/x-www-form-urlencoded',
-    },
-    body: new URLSearchParams(req.body),
-  })).json());
+		method: req.method,
+		headers: {
+			'Accept': 'application/json',
+			'Content-Type': 'application/x-www-form-urlencoded',
+		},
+		body: new URLSearchParams(req.body),
+	})).json());
 })
 
 const port = process.env.PORT || 3000
