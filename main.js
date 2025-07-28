@@ -4,7 +4,7 @@ const app = express()
 require('dotenv').config({ quiet: true })
 
 app.use(async (req, res) => {
-	const secrets = (process.env.FAR_SECRETS || '').split(',')
+	const secrets = (process.env.FAR_SECRETS || '').split(',').filter(e => !!e)
 
 	if (!secrets.length) {
 		return res.send('Please set FAR_SECRETS in .env to the format "domain client_secret,domain client_secret", then restart.')
