@@ -30,13 +30,13 @@ app.use(async (req, res) => {
 		})
 	}
 
-  return await res.json(await fetch(url, {
+  return await res.json(await (await fetch(url, {
     method: req.method,
     headers: {
       'Accept': 'application/json',
     },
     body: JSON.stringify(req.body)
-  }));
+  })).json());
 })
 
 const port = process.env.PORT || 3000
