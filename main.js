@@ -30,12 +30,13 @@ app.use(async (req, res) => {
 		})
 	}
 
-  return await res.json(await (await fetch(url, {
+	return await res.json(await (await fetch(url, {
     method: req.method,
     headers: {
-      'Accept': 'application/json',
+    	'Accept': 'application/json',
+    	'Content-Type': 'application/x-www-form-urlencoded',
     },
-    body: JSON.stringify(req.body)
+    body: new URLSearchParams(req.body),
   })).json());
 })
 
