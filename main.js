@@ -7,7 +7,7 @@ app.use(async (req, res) => {
 	const secrets = (process.env.FAR_SECRETS || '').split(',')
 
 	if (!secrets.length) {
-		return res.send('Please set FAR_SECRETS in /app/data/.env to the format "domain client_secret,domain client_secret", then restart.')
+		return res.send('Please set FAR_SECRETS in .env to the format "domain client_secret,domain client_secret", then restart.')
 	}
 
 	const url = req.path.slice(1);
