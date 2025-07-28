@@ -1,0 +1,13 @@
+# GIT
+.git
+
+# NODE
+node_modules
+npm-debug.log
+
+# BUILD
+**/__*/*
+
+# LOCAL
+.env*
+!.env-sample

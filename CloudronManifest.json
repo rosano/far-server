@@ -1,0 +1,16 @@
+{
+	"title": "far-server on Cloudron",
+	"version": "0.0.1",
+	"healthCheckPath": "/",
+	"httpPort": 3000,
+	"addons": {
+		"localstorage": {}
+	},
+	"multiDomain": true,
+	"author": "rosano.ca",
+	"description": "Maps requests to API authentication endpoints by passing client_secret.",
+	"documentationUrl": "https://github.com/rosano/far-server",
+	"postInstallMessage": "Please set FAR_SECRETS in /app/data/.env to the format \"domain client_secret,domain client_secret\", then restart.",
+	"website": "https://github.com/rosano/far-server",
+	"manifestVersion": 2
+}
