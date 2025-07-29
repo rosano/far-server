@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - Send params based on request method
+- Pass `Authorization` header
 
 ## [0.0.1] - 2025-07-28
 

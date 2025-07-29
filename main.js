@@ -41,6 +41,7 @@ app.use(async (req, res) => {
 		headers: {
 			'Accept': 'application/json',
 			'Content-Type': 'application/x-www-form-urlencoded',
+			'Authorization': req.get('Authorization'),
 		},
 		body: req.method === 'GET' ? undefined : params,
 	})).json());
