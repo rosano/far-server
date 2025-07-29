@@ -16,7 +16,7 @@ app.use(async (req, res) => {
 		return res.send('Please set FAR_SECRETS in .env to the format "domain client_secret,domain client_secret", then restart.')
 	}
 
-	const url = req.path.slice(1);
+	let url = req.path.slice(1);
 
 	if (!url.match(/^https?:\/\/.*/)) {
 		return res.send('missing URL');
@@ -30,13 +30,19 @@ app.use(async (req, res) => {
 		})
 	}
 
+	const params = new URLSearchParams(req.body);
+
+	if (req.method === 'GET') {
+		url = url.concat('?', params);
+	}
+
 	return await res.json(await (await fetch(url, {
 		method: req.method,
 		headers: {
 			'Accept': 'application/json',
 			'Content-Type': 'application/x-www-form-urlencoded',
 		},
-		body: new URLSearchParams(req.body),
+		body: req.method === 'GET' ? undefined : params,
 	})).json());
 })
 
