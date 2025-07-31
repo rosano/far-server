@@ -2,7 +2,7 @@
 
 Node.js server to help authenticate API access for browser-based apps. Helper for [FAR client](https://far.rosano.ca).
 
-First, set `FAR_SECRETS` to the following case-sensitive format for API secrets:
+First, set `FAR_SECRETS` in `.env` to the following case-sensitive format for API secrets:
 
 ```bash
 FAR_SECRETS="github.com YOUR_GITHUB_API_SECRET,codeberg.org YOUR_CODEBERG_API_SECRET"
